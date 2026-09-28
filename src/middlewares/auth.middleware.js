@@ -18,8 +18,8 @@ export const verifyJwtMiddleware = (req, res, next) => {
 	}
 	catch (err) {
 		console.error(err);
-		return res.status(401).json({
-			message: err instanceof Error ? err.message : 'Internal server error'
+		return res.status(err.statusCode || 500).json({
+			message: err.message || 'Internal server error'
 		})
 	}
 }
