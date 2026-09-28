@@ -1,7 +1,5 @@
 import { verifyJwt } from '../utils/jwt.util.js';
 
-const JWT_SECRET = process.env.JWT_SECRET;
-
 // Actual implementation of OAuth token verification will be done here.
 export const verifyOAuthMiddleware = (req, res, next) => {
 	req.user = {
